@@ -10,7 +10,7 @@
 <header>
   <nav class="navbar">
     <ul>
-      <li><a href="Home.html">Home</a></li>
+      <li><a href="index.html">Home</a></li>
       <li><a href="Menu.html">Menu</a></li>
       <li><a href="Catering.html">Catering</a></li>
       <li><a href="Reservations.php">Reservation</a></li>
@@ -150,7 +150,7 @@ document.getElementById('reservationForm').addEventListener('submit', function(e
           <li>Thursday: 09:00 AM - 2:00 AM</li>
           <li>Friday: 09:00 AM - 2:00 AM</li>
           <li>Saturday: 09:00 AM - 2:00 AM</li>
-          <li>Sunday: 09:00 AM - 2:00 AM</li>
+          <li>Sunday: 09:00 AM - 2:00 A</li>
         </ul>
       </div>
   
