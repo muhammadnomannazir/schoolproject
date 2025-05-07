@@ -1,0 +1,292 @@
+/* General Body Styling */
+body {
+    background-color: #f5f5dc; /* Light cream background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header and Navigation Bar Styling */
+  header {
+    background-color: #333;
+    padding: 10px 0;
+  }
+  
+  .navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  .navbar li {
+    display: inline;
+    margin-right: 20px;
+  }
+  
+  .navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  
+  .navbar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+  }
+  
+  /* Image Container with Overlay Text */
+  .image-container {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    }
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 0;
+    }
+
+  .overlay-text {
+    position: absolute;
+    top: 60%; /* Adjusted to move text slightly lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+    background-color: transparent; /* Ensures no background color */
+  }
+  
+  /* Appetizers Section Styling */
+  .appetizers {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .appetizers h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .dish {
+    background-color: white;
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-bottom: 20px;
+  }
+  
+  .dish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns name and price horizontally */
+  }
+  
+  .dish-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #444;
+  }
+  
+  .price {
+    font-size: 1.2rem;
+    color: #666;
+    margin-left: 20px;
+  }
+  
+  .description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+  }
+  
+  /* Lamb and Beef Section */
+.LambAndBeef {
+    text-align: center;
+    margin: 40px 0;
+  }
+  
+  .LambAndBeef h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  .LambAndBeef .dish {
+    background-color: white;
+    display: inline-block;
+    text-align: left;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 60%;
+    margin-bottom: 20px;
+  }
+  
+  .LambAndBeef .dish-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center; /* Aligns name and price horizontally */
+  }
+  
+  .LambAndBeef .dish-header h3 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #444;
+  }
+  
+  .LambAndBeef .price {
+    font-size: 1.2rem;
+    color: #666;
+    margin-left: 20px;
+  }
+  
+  .LambAndBeef .description {
+    font-size: 1rem;
+    color: #555;
+    margin-top: 10px;
+  }
+
+    /* Chicken */
+.LambAndBeef {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .Chicken {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+  .Chicken h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+      /* Pasta */
+.Pasta {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+.Pasta {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+.Pasta h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+/*  Desserts */
+  .Desserts {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+.Desserts {
+    text-align: center;
+    margin: 40px 0;
+  }
+
+.Desserts h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  /* Logo Styling */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 100px;
+  z-index: 1001; /* Higher than header */
+}
+
+.logo {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Adjust header to relative for absolute logo placement */
+header {
+  background-color: #333;
+  padding: 15px 0;
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  position: relative;
+}
+
+  /* Footer Styles */
+.footer {
+  background-color: #ffffff;
+  padding: 40px 20px;
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.footer-container {
+  width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer-section {
+  flex: 1 1 250px;
+}
+
+.footer-section.about {
+  flex: 2 1 400px;
+}
+
+.footer-section h3 {
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0 0 10px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-section a {
+  color: #333;
+  text-decoration: none;
+}
+
+.footer-section a:hover {
+  text-decoration: underline;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}

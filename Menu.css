@@ -1,0 +1,222 @@
+body {
+    background-color: #f5f5dc; /* Light cream background */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #333;
+    padding: 10px 0;
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.navbar li {
+    display: inline;
+    margin-right: 20px;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+.content {
+    padding: 50px 40px;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.image-container {
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+
+.overlay {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+/* Menu Section Styles */
+.menu-section {
+    margin-top: 40px;
+}
+
+.section-title {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: left;
+    padding-left: 10px;
+}
+
+.menu-items {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.menu-item {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 250px;
+}
+
+.menu-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.item-details {
+    padding: 15px;
+}
+
+.item-details h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #444;
+}
+
+.price {
+    font-size: 18px;
+    color: #666;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 14px;
+    color: #555;
+}
+/* Responsive tweak for smaller screens */
+@media (max-width: 768px) {
+    .menu-items {
+        justify-content: center;
+    }
+
+    .menu-item {
+        width: 90%;
+    }
+}
+
+/* Logo Styling */
+.logo-container {
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    z-index: 1001; /* Higher than header */
+}
+
+.logo {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+/* Adjust header to relative for absolute logo placement */
+header {
+    background-color: #333;
+    padding: 15px 0;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    position: relative;
+}
+
+/* Footer Styles */
+.footer {
+    background-color: #ffffff;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #333;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1 1 250px;
+  }
+  
+  .footer-section.about {
+    flex: 2 1 400px;
+  }
+  
+  .footer-section h3 {
+    margin-bottom: 15px;
+  }
+  
+  .footer-section p,
+  .footer-section ul {
+    margin: 0 0 10px 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .footer-section a {
+    color: #333;
+    text-decoration: none;
+  }
+  
+  .footer-section a:hover {
+    text-decoration: underline;
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+  }
+  
