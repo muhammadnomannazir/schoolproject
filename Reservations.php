@@ -31,6 +31,10 @@
 
 <section class="booking-form">
   <h2>Table Reservation</h2>
+
+  <!-- Error message container -->
+  <div id="errorMessage"></div>
+
   <form id="reservationForm" action="reserve.php" method="POST">
     <!-- Number of Persons -->
     <label for="persons">Number of Persons:</label>
@@ -51,7 +55,6 @@
     <!-- Time -->
     <label for="time">Time:</label>
     <select id="time" name="time" required>
-      <!-- Time options -->
       <option value="" disabled selected>Select Time</option>
       <option value="10:00 AM">10:00 AM</option>
       <option value="11:00 AM">11:00 AM</option>
@@ -82,81 +85,93 @@
 
 <script>
 document.getElementById('reservationForm').addEventListener('submit', function(e) {
+  e.preventDefault(); // Prevent form from submitting normally
+
+  const errorMessageDiv = document.getElementById('errorMessage');
+  errorMessageDiv.innerHTML = ''; // Clear previous errors
+
+  const errors = [];
+
   const phone = document.getElementById('phone').value.trim();
-  const date = new Date(document.getElementById('date').value);
+  const dateInput = document.getElementById('date').value;
+  const date = new Date(dateInput);
   const today = new Date();
-  today.setHours(0, 0, 0, 0); // reset hours for proper comparison
+  today.setHours(0, 0, 0, 0);
   const maxDate = new Date();
   maxDate.setMonth(today.getMonth() + 1);
+
   const comments = document.getElementById('comments').value.trim();
   const commentWords = comments.split(/\s+/).filter(word => word.length > 0);
 
-  // Phone validation: must match (xxx) xxx-xxxx
   const phoneRegex = /^\(\d{3}\)\s\d{3}-\d{4}$/;
   if (!phoneRegex.test(phone)) {
-    alert("Please enter a valid phone number format: (123) 456-7890");
-    e.preventDefault();
-    return;
+    errors.push("• Phone must be in the format (123) 456-7890.");
   }
 
-  // Date validation: not before today and not after 1 month
-  if (date < today || date > maxDate) {
-    alert("Reservation date must be within 1 month from today.");
-    e.preventDefault();
-    return;
+  if (!dateInput || date < today || date > maxDate) {
+    errors.push("• Date must be within 1 month from today.");
   }
 
-  // Comment validation: max 50 words
   if (commentWords.length > 50) {
-    alert("Comments cannot exceed 50 words.");
-    e.preventDefault();
+    errors.push("• Comments cannot exceed 50 words.");
+  }
+
+  if (errors.length > 0) {
+    errorMessageDiv.innerHTML = errors.join("<br>");
     return;
   }
+
+  // If no errors, show thank you message
+  const formSection = document.querySelector('.booking-form');
+  formSection.innerHTML = `
+    <div class="thank-you-message">
+      <h2>🎉 Thank You!</h2>
+      <p>Your reservation has been received. We'll see you soon at Rana's Cafe!</p>
+      <a href="Reservations.php" class="back-button">Make Another Reservation</a>
+    </div>
+  `;
 });
 </script>
 
+
 <!-- Footer Section -->
 <footer class="footer bg-dark text-white py-10">
-    <div class="container footer-container flex flex-wrap justify-between gap-8 px-4">
-  
-      <!-- Contact Information -->
-      <div class="footer-section w-full sm:w-1/3">
-        <h3 class="text-lg font-bold mb-2">Contact</h3>
-        <p><strong>Call us:</strong> <a href="tel:9292459647" class="text-blue-400 hover:underline">(929) 245-9647</a></p>
-        <p><a href="OrderOnline.html" class="hover:underline">Order Online</a></p>
-        <p><strong>Address:</strong><br>
-          <a href="https://www.google.com/maps?q=1809+Emmons+Ave,+Brooklyn,+NY+11235" target="_blank" class="hover:underline">
-            1809 Emmons Ave<br>
-            Brooklyn, NY 11235
-          </a>
-        </p>
-        <p><a href="mailto:muhammadnomannazir123@gmail.com" class="hover:underline">muhammadnomannazir123@gmail.com</a></p>
-      </div>
-  
-      <!-- About Section -->
-      <div class="footer-section w-full sm:w-1/3">
-        <h3 class="text-lg font-bold mb-2">About</h3>
-        <p class="text-sm leading-relaxed">
-          Rana's Cafe & Restaurant is renowned for its Mediterranean cuisine, homemade dishes, and hearty breakfasts.
-          Enjoy a flavorful experience at Masal Plus Cafe & Restaurant, where every bite is a memory.
-        </p>
-      </div>
-  
-      <!-- Open Hours -->
-      <div class="footer-section w-full sm:w-1/3">
-        <h3 class="text-lg font-bold mb-2">Open Hours</h3>
-        <ul class="text-sm leading-relaxed">
-          <li>Monday - Sunday: 09:00 AM - 2:00 AM</li>
-        </ul>
-      </div>
-  
+  <div class="container footer-container flex flex-wrap justify-between gap-8 px-4">
+
+    <div class="footer-section w-full sm:w-1/3">
+      <h3 class="text-lg font-bold mb-2">Contact</h3>
+      <p><strong>Call us:</strong> <a href="tel:9292459647" class="text-blue-400 hover:underline">(929) 245-9647</a></p>
+      <p><a href="OrderOnline.html" class="hover:underline">Order Online</a></p>
+      <p><strong>Address:</strong><br>
+        <a href="https://www.google.com/maps?q=1809+Emmons+Ave,+Brooklyn,+NY+11235" target="_blank" class="hover:underline">
+          1809 Emmons Ave<br>
+          Brooklyn, NY 11235
+        </a>
+      </p>
+      <p><a href="mailto:muhammadnomannazir123@gmail.com" class="hover:underline">muhammadnomannazir123@gmail.com</a></p>
     </div>
-  
-    <!-- Footer Bottom -->
-    <div class="footer-bottom text-center mt-10 border-t border-gray-700 pt-4 text-sm">
-      <p> © Rana's | Developed by Authorize Local</p>
+
+    <div class="footer-section w-full sm:w-1/3">
+      <h3 class="text-lg font-bold mb-2">About</h3>
+      <p class="text-sm leading-relaxed">
+        Rana's Cafe & Restaurant is renowned for its Mediterranean cuisine, homemade dishes, and hearty breakfasts.
+        Enjoy a flavorful experience at Masal Plus Cafe & Restaurant, where every bite is a memory.
+      </p>
     </div>
-  </footer> 
+
+    <div class="footer-section w-full sm:w-1/3">
+      <h3 class="text-lg font-bold mb-2">Open Hours</h3>
+      <ul class="text-sm leading-relaxed">
+        <li>Monday - Sunday: 09:00 AM - 2:00 AM</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom text-center mt-10 border-t border-gray-700 pt-4 text-sm">
+    <p> © Rana's | Developed by Authorize Local</p>
+  </div>
+</footer>
 
 </body>
 </html>
