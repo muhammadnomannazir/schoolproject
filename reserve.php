@@ -28,8 +28,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Comments cannot exceed 50 words.");
     }
 
-    // Connect to MySQL (without DB first) 
-    $conn = mysqli_connect("localhost", "root", "Shumaila2019!");
+    // Connect to MySQL
+    $conn = mysqli_connect("localhost", "root", "kbOSsXN!o+43");
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
     }
