@@ -1,5 +1,5 @@
 <?php
-// Display errors for debugging (optional, remove in production)
+// Display errors for debugging 
 ini_set('display_errors', 1);
 error_reporting(E_ALL);
 
@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = htmlspecialchars(trim($_POST['phone']));
     $comments = htmlspecialchars(trim($_POST['comments']));
 
-    // === Validation ===
+    // Validation 
 
     // Phone format
     if (!preg_match('/^\(\d{3}\)\s\d{3}-\d{4}$/', $phone)) {
@@ -30,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Comments cannot exceed 50 words.");
     }
 
-    // === Connect to MySQL (without DB first) ===
+    // Connect to MySQL (without DB first) 
     $conn = mysqli_connect("localhost", "root", "Shumaila2019!");
     if (!$conn) {
         die("Connection failed: " . mysqli_connect_error());
