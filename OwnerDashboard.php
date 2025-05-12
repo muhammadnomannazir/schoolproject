@@ -26,7 +26,7 @@
 </div>
 
 <?php
-$conn = mysqli_connect("localhost", "root", "Shumaila2019!", "php_db");
+$conn = mysqli_connect("localhost", "root", "kbOSsXN!o+43", "php_db");
 if (!$conn) {
     die("Connection failed: " . mysqli_connect_error());
 }
