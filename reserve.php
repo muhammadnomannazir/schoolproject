@@ -11,8 +11,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $phone = htmlspecialchars(trim($_POST['phone']));
     $comments = htmlspecialchars(trim($_POST['comments']));
 
-    // Validation 
-
     // Phone format
     if (!preg_match('/^\(\d{3}\)\s\d{3}-\d{4}$/', $phone)) {
         die("Invalid phone format. Use (123) 456-7890.");
